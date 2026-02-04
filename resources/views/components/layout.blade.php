@@ -23,9 +23,9 @@
                 <div class="flex justify-between items-center gap-4 p-4">
                      <a href="#" class="hover:text-pulse-rose transition-colors">Today</a>
                     <a href="/" class="hover:text-pulse-rose transition-colors">My Pulse</a>
-                    <a href="#" class="hover:text-pulse-rose transition-colors">My Circle</a>
+                    <a href="#" class="hover:text-pulse-rose transition-colors">Inner Circle</a>
                     {{-- <a href="#" class="hover:text-pulse-rose transition-colors">The Commons</a> --}}
-                    <a href="#" class="hover:text-pulse-rose transition-colors">New Entry</a>
+                    <a href="#" class="hover:text-pulse-rose transition-colors">Discovery</a>
 
                     <a href="/sign-in"
                         class="bg-pulse-violet text-white px-4 py-2 rounded-full hover:bg-pulse-rose transition-all shadow-md">Sign In</a>

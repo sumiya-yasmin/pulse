@@ -14,9 +14,9 @@ class PulseController extends Controller
         'date' => '2026-02-01',
         'mood' => 'calm',
         'energy' => 6,
-        'title' => 'Quiet Saturday',
+        'title' => 'Quiet Saturday. Spent most of the day reading and organizing my thoughts.',
         'body' => 'Spent most of the day reading and organizing my thoughts. No rush, no noise.',
-        'visibility' => 'private', // private | circle | public
+        'visibility' => 'private', 
         'tags' => ['reflection', 'rest'],
     ],
     [
@@ -31,6 +31,36 @@ class PulseController extends Controller
     ],
     [
         'id' => 3,
+        'date' => '2026-02-03',
+        'mood' => 'heavy',
+        'energy' => 4,
+        'title' => 'One of those days',
+        'body' => 'Felt overwhelmed and unfocused. Took a walk instead of pushing through.',
+        'visibility' => 'private',
+        'tags' => ['mental-health'],
+    ],
+    [
+        'id' => 4,
+        'date' => '2026-02-01',
+        'mood' => 'calm',
+        'energy' => 6,
+        'title' => 'Quiet Saturday',
+        'body' => 'Spent most of the day reading and organizing my thoughts. No rush, no noise.',
+        'visibility' => 'private', // private | circle | public
+        'tags' => ['reflection', 'rest'],
+    ],
+    [
+        'id' => 5,
+        'date' => '2026-02-02',
+        'mood' => 'focused',
+        'energy' => 8,
+        'title' => 'Deep Work Session',
+        'body' => 'Finally made progress on the Laravel project. Things are starting to click.',
+        'visibility' => 'circle',
+        'tags' => ['coding', 'learning'],
+    ],
+    [
+        'id' => 6,
         'date' => '2026-02-03',
         'mood' => 'heavy',
         'energy' => 4,
