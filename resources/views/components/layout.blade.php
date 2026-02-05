@@ -21,7 +21,7 @@
                     <span class="text-xl font-extrabold tracking-tight text-pulse-violet">Pulse</span>
                 </div>
                 <div class="flex justify-between items-center gap-4 p-4">
-                     <a href="#" class="hover:text-pulse-rose transition-colors">Today</a>
+                     <a href="{{ route('pulse.create') }}" class="hover:text-pulse-rose transition-colors">Write</a>
                     <a href="/" class="hover:text-pulse-rose transition-colors">My Pulse</a>
                     <a href="#" class="hover:text-pulse-rose transition-colors">Inner Circle</a>
                     {{-- <a href="#" class="hover:text-pulse-rose transition-colors">The Commons</a> --}}
