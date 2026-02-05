@@ -9,24 +9,29 @@
         </div>
         <div class="space-y-6">
             @foreach ($pulses as $pulse)
-                <div class="bg-white border border-pulse-rose/10 rounded-2xl shadow-sm hover:shadow-md transiton-shadow">
-                    <div class="flex justify-between p-4">
-                        <div class="flex flex-col gap-2 max-w-[70%]">
-                            <span class="text-xs font-bold uppercase tracking-widest text-pulse-rose">
+                <div
+                    class="bg-white border p-6 border-pulse-rose/10 rounded-2xl shadow-sm hover:shadow-md transiton-shadow">
+                    <div class="flex flex-col md:flex-row items-start gap-6 justify-between">
+                        <div class="flex flex-col gap-2 flex-grow">
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-pulse-rose">
                                 {{ Carbon::parse($pulse['date'])->format('M d, Y') }}
                             </span>
-                            <h2 class="font-bold italic">{{ $pulse['title'] }}</h2>
+                            <h2 class="font-bold text-pulse-violet text-lg">{{ $pulse['title'] }}</h2>
+                            <p class="text-sm text-pulse-violet/70 leading-relaxed italic">
+                                {{ Str::limit($pulse['body'], 100) }}
+                            </p>
                         </div>
-                        <div class="flex flex-col gap-2 items-start">
+                        <div
+                            class="flex flex-row md:flex-col justify-between md:justify-start items-center md:items-start w-full md:w-auto gap-4">
                             <div class="flex items-baseline gap-1">
-                                <span class="text-[10px] font-bold text-pulse-violet/40 uppercase">Feeling</span>
+                                <span class="text-[10px] font-black text-pulse-violet/40 uppercase">Feeling</span>
                                 <span
                                     class="bg-pulse-cream text-pulse-violet text-[10px] font-bold px-2 py-1 rounded-full uppercase">
                                     {{ $pulse['mood'] }}
                                 </span>
                             </div>
                             <div class="flex items-center gap-1">
-                                <span class="text-[10px] font-bold text-pulse-violet/40 uppercase">Energy</span>
+                                <span class="text-[10px] font-black text-pulse-violet/40 uppercase">Energy</span>
                                 <div class="flex gap-0.5">
                                     @for ($i = 1; $i <= 10; $i++)
                                         <div
