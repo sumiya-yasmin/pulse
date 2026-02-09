@@ -1,4 +1,5 @@
 @props(['pulse'])
+<a href={{ Route('pulse.show', $pulse) }}>
 <div class="bg-white border p-6 border-pulse-rose/10 rounded-2xl shadow-sm hover:shadow-md transiton-shadow">
     <div class="flex flex-col md:flex-row items-start gap-6 justify-between">
         <div class="flex flex-col gap-2 flex-grow">
@@ -39,3 +40,4 @@
         </div>
     </div>
 </div>
+</a>

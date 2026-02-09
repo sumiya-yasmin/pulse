@@ -1,4 +1,5 @@
-@use('Carbon\Carbon')<x-layout>
+@use('Carbon\Carbon')
+<x-layout>
     <x-slot:title>
         Home
     </x-slot:title>
