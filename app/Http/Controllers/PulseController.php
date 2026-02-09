@@ -30,5 +30,9 @@ class PulseController extends Controller
        \App\Models\Pulse::create(array_merge($data + ['user_id' => 1]));
        return redirect('/')->with('success', 'Pulse saved!');
     }
+    public function show(Pulse $pulse)
+    {
+       return view('pulses.show', ['pulse' => $pulse]);
+    }
 
 }
