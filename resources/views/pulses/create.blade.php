@@ -36,6 +36,16 @@
                     </div>
                 </div>
             </div>
+            <div class="mt-8 border-pulse-violet/10 border">
+                <textarea placeholder="Spill your thoughts here..." name="body"
+                    class=" py-0 px-4 w-full min-h-[525px] resize-none text-lg placeholder-pulse-violet/20 focus:ring-0 outline-none leading-[3rem]"
+                    style="background-image: linear-gradient(#f1e9e9 1px, transparent 1px); background-size: 100% 3rem; background-attachment: local;background-position:0 2.9rem"
+                    required>{{ old('body') }}</textarea>
+                @error('body')
+                    <p class="text-rose-500 text-xs font-bold mt-2 italic">{{ $message }}</p>
+                @enderror
+            </div>
+            
         </form>
     </div>
 
