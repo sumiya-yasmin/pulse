@@ -11,7 +11,7 @@ class Pulse extends Model
         'body',
         'mood',
         'energy',
-        'visibility'
+        'user_id'
     ];
 
     public function user(){
