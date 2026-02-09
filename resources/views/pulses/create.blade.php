@@ -5,9 +5,14 @@
     <div class="max-w-4xl max-auto px-4 py-8 rounded-md">
         <form action="{{ route('pulse.store') }}" method="POST" class="space-y-8">
             @csrf
+            <div>
             <input type="text" name="title" value="{{ old('title') }}"
                 placeholder="Give this moment or feeling a title..."
                 class="w-full bg-white rounded text-2xl md:text-4xl font-black border-none placeholder-pulse-violet/20 text-pulse-violet px-4 py-2">
+                @error('title')
+                    <p class="text-rose-500 text-xs font-bold italic">{{ $message }}</p>
+                @enderror
+            </div>
             <div class="flex flex-col md:flex-row gap-2 md:items-center justify-between">
                 <div
                     class="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-pulse-rose/10 md:w-fit w-[250px]">
@@ -18,6 +23,9 @@
                     <input type="text" name="mood" value="{{ old('mood') }}" placeholder="e.g, sad, happy"
                         class="border-none focus:ring-0 text-sm font-bold text-pulse-violet placeholder-pulse-violet/20 bg-transparent"
                         required>
+                    @error('mood')
+                    <p class="text-rose-500 text-xs font-bold mt-2 italic">{{ $message }}</p>
+                @enderror
                 </div>
                 <div
                     class="flex items-center gap-2 bg-white px-4 py-2 rounded-full border border-pulse-rose/10 md:w-fit w-[250px]">
@@ -34,6 +42,9 @@
                             </button>
                         @endfor
                     </div>
+                    @error('energy')
+                    <p class="text-rose-500 text-xs font-bold mt-2 italic">{{ $message }}</p>
+                @enderror
                 </div>
             </div>
             <div class="mt-8 border-pulse-violet/10 border">
@@ -46,7 +57,8 @@
                 @enderror
             </div>
             <div class="flex justify-end mt-4">
-                <button type="submit" class="px-8 py-3 rounded-full bg-pulse-violet text-white hover:bg-pulse-violet/90 font-bold" >Save</button>
+                <button type="submit"
+                    class="px-8 py-3 rounded-full bg-pulse-violet text-white hover:bg-pulse-violet/90 font-bold">Save</button>
             </div>
         </form>
     </div>
