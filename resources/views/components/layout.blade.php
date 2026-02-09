@@ -10,6 +10,18 @@
 </head>
 
 <body class="min-h-screen bg-pulse-cream font-sans antialised text-pulse-violet flex flex-col">
+    @if(session('success') || session('error') || session('status'))
+    <div class="fixed top-24 right-5 z-60 px-6 py-3 rounded-xl shadow-2xl font-bol text-white transition-all duration-500 transform translate-x-0 {{ session('error') ? 'bg-rose-500': 'bg-pulse-violet'}}">
+    <div>
+        @if(session('error'))
+        <x-heroicon-s-x-circle class="w-5 h-5" />
+        @else
+        <x-heroicon-s-check-circle class="h-5 w-5" />
+        @endif
+        {{ session('success') ?? session('error') ?? session('status') }}
+    </div> 
+    </div>
+    @endif
     <nav class="bg-white/80 backdrop-blur border-b border-pulse-rose/10 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
@@ -23,7 +35,7 @@
                 <div class="flex justify-between items-center gap-4 p-4">
                      <a href="{{ route('pulse.create') }}" class="hover:text-pulse-rose transition-colors">Write</a>
                     <a href="/" class="hover:text-pulse-rose transition-colors">My Pulse</a>
-                    <a href="#" class="hover:text-pulse-rose transition-colors">Inner Circle</a>
+                    <a href="#" class="hover:text-pulse-rose transition-colors">My Circle</a>
                     {{-- <a href="#" class="hover:text-pulse-rose transition-colors">The Commons</a> --}}
                     <a href="#" class="hover:text-pulse-rose transition-colors">Discovery</a>
 
