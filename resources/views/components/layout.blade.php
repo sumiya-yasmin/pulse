@@ -11,8 +11,8 @@
 
 <body class="min-h-screen bg-pulse-cream font-sans antialised text-pulse-violet flex flex-col">
     @if(session('success') || session('error') || session('status'))
-    <div class="fixed top-24 right-5 z-60 px-6 py-3 rounded-xl shadow-2xl font-bol text-white transition-all duration-500 transform translate-x-0 {{ session('error') ? 'bg-rose-500': 'bg-pulse-violet'}}">
-    <div>
+    <div id="flash-message" class="fixed top-24 right-5 z-60 px-6 py-3 rounded-xl shadow-2xl font-bol text-white transition-all duration-500 transform translate-x-0 {{ session('error') ? 'bg-rose-500': 'bg-pulse-violet'}}">
+    <div class="flex items-center gap-3">
         @if(session('error'))
         <x-heroicon-s-x-circle class="w-5 h-5" />
         @else
@@ -62,6 +62,18 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const flash = document.getElementById('flash-message');
+            if(flash){
+               setTimeout(() => {
+                flash.style.opacity = '0';
+                flash.style.transform = 'translateX(100px)';
+                setTimeout(()=>flash.remove(), 500);
+               }, 4000);
+            }
+        })
+    </script>
 </body>
 
 </html>
