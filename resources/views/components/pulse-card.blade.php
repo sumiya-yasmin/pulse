@@ -1,19 +1,20 @@
-@props(['pulse'])
-<a href={{ Route('pulse.show', $pulse) }}>
-<div class="bg-white border p-6 border-pulse-rose/10 rounded-2xl shadow-sm hover:shadow-md transiton-shadow">
+@props(['pulse', 'full' => false])
+<div
+    class="bg-white border p-6 border-pulse-rose/10 rounded-2xl shadow-sm {{ !$full ? 'hover:shadow-md transiton-shadow' : '' }}">
     <div class="flex flex-col md:flex-row items-start gap-6 justify-between">
         <div class="flex flex-col gap-2 flex-grow">
             <span class="text-[10px] font-bold uppercase tracking-widest text-pulse-rose">
-                @if ($pulse->created_at->gt(now()->subDays(3)))
-                    {{ $pulse->created_at->diffForHumans() }}
-                @else
+                @if ($full)
                     {{ $pulse->created_at->format('M d, Y') }}
+                @else
+                    @if ($pulse->created_at->gt(now()->subDays(3)))
+                        {{ $pulse->created_at->diffForHumans() }}
+                    @else
+                        {{ $pulse->created_at->format('M d, Y') }}
+                    @endif
                 @endif
             </span>
-            <h2 class="font-bold text-pulse-violet text-lg">{{ $pulse->title }}</h2>
-            <p class="text-sm text-pulse-violet/70 leading-relaxed italic">
-                {{ Str::limit($pulse->body, 100) }}
-            </p>
+            <h2 class="font-bold text-pulse-violet {{ $full ? 'text-3xl' : 'text-lg' }}">{{ $pulse->title }}</h2>
         </div>
         <div
             class="flex flex-row md:flex-col justify-between md:justify-start items-center md:items-start w-full md:w-auto gap-4">
@@ -39,5 +40,18 @@
             </div>
         </div>
     </div>
+    @if ($full)
+        <p class="text-lg w-full text-pulse-violet/70 leading-[3rem] mt-4"
+            style="background-image: linear-gradient(#f1e9e9 1px, transparent 1px);
+                   background-size: 100% 3rem;
+                   background attachment: local;
+                   background-position: 0 2.9rem;">
+            {!! nl2br(e($pulse->body)) !!} </p>
+    @else
+        <div class="mt-2">
+            <p class="text-sm text-pulse-violet/70 leading-relaxed italic">
+                {{ Str::limit($pulse->body, 150) }}
+            </p>
+        </div>
+    @endif
 </div>
-</a>
