@@ -8,9 +8,11 @@
             <h2 class="text-3xl font-black text-pulse-violet">Welcome to Pulse</h2>
             <p class="text-pulse-violet/60 mt-2 italic">Your personal space to reflect and connect.</p>
         </div>
-        <div class="space-y-6">
+        <div class="flex flex-col gap-2">
             @forelse ($pulses as $pulse)
-                <x-pulse-card :pulse="$pulse" />
+                <a href={{ Route('pulse.show', $pulse) }}>
+                    <x-pulse-card :pulse="$pulse" />
+                </a>
             @empty
                 <div class="text-center py-20 bg-white/40 border-2 border-dashed border-pulse-rose/10 rounded-3xl">
                     <x-heroicon-o-plus-circle class="w-12 h-12 mx-auto text-pulse-rose/40 mb-4" />
