@@ -56,7 +56,10 @@
                     <p class="text-rose-500 text-xs font-bold mt-2 italic">{{ $message }}</p>
                 @enderror
             </div>
-            <div class="flex justify-end mt-4">
+            <div class="flex justify-end mt-4 gap-4">
+                <a
+                    href="/"
+                    class="px-8 py-3 rounded-full bg-red-500 text-white hover:bg-red-400 font-bold">Cancel</a>
                 <button type="submit"
                     class="px-8 py-3 rounded-full bg-pulse-violet text-white hover:bg-pulse-violet/90 font-bold">Save</button>
             </div>
