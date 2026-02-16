@@ -53,4 +53,10 @@ class PulseController extends Controller
        $pulse->update($data);
        return redirect()->route('pulse.show', $pulse)->with('success', 'Pulse Updated!');
     }
+
+    public function destroy(Pulse $pulse)
+    {
+        $pulse->delete();
+        return redirect('/')->with('success', 'Pulse Deleted');
+    }
 }
