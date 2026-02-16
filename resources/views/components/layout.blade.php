@@ -25,6 +25,7 @@
     <nav class="bg-white/80 backdrop-blur border-b border-pulse-rose/10 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
+                <a href="/">
                 <div class="flex items-center gap-2">
                     <div
                         class="w-8 h-8 bg-pulse-rose rounded-lg flex items-center justify-center text-white font-black shadow-lg shadow-pulse-rose/20">
@@ -32,6 +33,7 @@
                     </div>
                     <span class="text-xl font-extrabold tracking-tight text-pulse-violet">Pulse</span>
                 </div>
+            </a>
                 <div class="flex justify-between items-center gap-4 p-4">
                      <a href="{{ route('pulse.create') }}" class="hover:text-pulse-rose transition-colors">Write</a>
                     <a href="/" class="hover:text-pulse-rose transition-colors">My Pulse</a>
