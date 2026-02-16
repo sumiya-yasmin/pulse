@@ -37,6 +37,20 @@ class PulseController extends Controller
     
     public function edit(Pulse $pulse)
     {
-        return view('pulse.edit', ['pulse'=>$pulse]);
+        return view('pulses.edit', ['pulse'=>$pulse]);
+    }
+
+    public function update(Request $request, Pulse $pulse)
+    {
+         $data = $request->validate([
+        'title' => 'required|min:3|max:255',
+        'body' => 'required|min:10',
+        'mood' => 'required|max:50',
+        'energy' => 'required|integer|min:1|max:10'
+
+       ]);
+
+       $pulse->update($data);
+       return redirect()->route('pulse.show', $pulse)->with('success', 'Pulse Updated!');
     }
 }
