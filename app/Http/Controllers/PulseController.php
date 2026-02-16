@@ -34,5 +34,9 @@ class PulseController extends Controller
     {
        return view('pulses.show', ['pulse' => $pulse]);
     }
-
+    
+    public function edit(Pulse $pulse)
+    {
+        return view('pulse.edit', ['pulse'=>$pulse]);
+    }
 }
