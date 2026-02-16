@@ -56,12 +56,20 @@
     @endif
 
     @if ($full)
-    <div class="mt-12 flex items-center justify-end gap-4 pt-6 border-t border-pulse-rose/10">
-        <a href="{{ route('pulse.edit', $pulse) }}" 
-           class="text-xs font-bold uppercase tracking-widest text-pulse-violet/50 hover:text-pulse-rose transition-colors">
-            Edit 
-        </a>
+        <div class="mt-12 flex items-center justify-end gap-4 pt-6 border-t border-pulse-rose/10">
+            <a href="{{ route('pulse.edit', $pulse) }}"
+                class="text-xs font-bold uppercase tracking-widest text-pulse-violet/50 hover:text-pulse-rose transition-colors">
+                Edit
+            </a>
 
-    </div>
-@endif
+            <form action="{{ route('pulse.destroy', $pulse) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit"
+                    class="text-xs font-bold uppercase tracking-widest text-pulse-rose/50 hover:text-pulse-rose transition-colors">
+
+                    Delete</button>
+            </form>
+        </div>
+    @endif
 </div>
